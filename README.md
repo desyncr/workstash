@@ -7,6 +7,12 @@ Workspace manager extension.
 
 Generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
 
+### TODO
+
+- [ ] Saving resources (bookmarks)
+- [ ] Notes
+- [ ] TODO list
+- [ ] General look and feel
 
 #### Hacking
 
@@ -25,16 +31,6 @@ Load the extension: `cd dist/webext && web-ext run`
 - [Chrome extension](https://developer.chrome.com/extensions)
 
 ## Getting Started:
-
-#### Configure extensions:
-Clone repo and install dependencies:  
-```bash 
-git clone --depth 1 https://github.com/radiium/angular-web-extension
-cd angular-web-extension
-npm install
-```
-Find and replace ```angular-web-extension``` string by your app name.
-May be adjust rules in src/manifest.json like permissions, content_security_policy, etc....
 
 #### Run extension:
 
