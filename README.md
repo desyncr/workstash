@@ -1,7 +1,9 @@
-# angular-web-extension
+# Workstash
+
+![Screenshot](https://github.com/desyncr/workstash/blob/master/screenshot.png?raw=true)
 
 ## Description:
-This project is an angular template for creating cross browser extension (Firefox/Chrome).  
+Workspace manager extension.
 
 Generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
 
