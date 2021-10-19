@@ -1,8 +1,9 @@
-import { Injector, OnInit, OnDestroy } from '@angular/core';
+import { Injectable, Injector, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { LoadingService } from '@core/services/loading.service';
 
-export class BaseAbstract implements OnInit, OnDestroy {
+@Injectable()
+export class BaseAbstract implements OnDestroy {
 
     protected loadingService: LoadingService;
 
@@ -11,9 +12,6 @@ export class BaseAbstract implements OnInit, OnDestroy {
 
     constructor(public injector: Injector) {
         this.loadingService = this.injector.get(LoadingService);
-    }
-
-    ngOnInit() {
     }
 
     ngOnDestroy() {

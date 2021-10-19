@@ -21,7 +21,6 @@ export class SettingsPageComponent extends BaseAbstract implements OnInit {
     }
 
     ngOnInit(): void {
-        super.ngOnInit();
         this.subs.settings = this.settingsService.$state.subscribe({
             next: (settings: SettingsState) => {
                 this.settings = settings;

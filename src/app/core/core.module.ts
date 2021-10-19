@@ -5,6 +5,7 @@ import { BrowserAPIService } from './browser-api/browser-api.service';
 import { BrowserAPIFactory } from './browser-api/browser-api.factory';
 import { LoadingService } from './services/loading.service';
 import { SettingsService } from './services/settings.service';
+import { WorkstashService } from './services/workstash.service';
 
 @NgModule({
     providers: [
@@ -14,7 +15,8 @@ import { SettingsService } from './services/settings.service';
         },
         TitleCasePipe,
         LoadingService,
-        SettingsService
+        SettingsService,
+        WorkstashService
     ],
 })
 export class CoreModule { }

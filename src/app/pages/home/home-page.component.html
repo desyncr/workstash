@@ -1,3 +1,18 @@
-<div class="home-page-wrapper">
-    <h1>Home page</h1>
+<div *ngIf="workstash" class="home-page-wrapper ui visible left vertical sidebar menu">
+    <div *ngIf="hasOpenWorkspaces()">
+        <a class="item"><i class="folder icon"></i> Open workspaces</a>
+        <div *ngFor="let section of workstash.sections">
+            <span *ngFor="let workspace of section.workspaces">
+                <a *ngIf="workspace.open" (click)="activateWorkspace(workspace.id)" class="item">{{workspace.name}} <i class="close icon" (click)="closeWorkspace(workspace.id)"></i></a>
+            </span>
+        </div>
+        <a class="item"></a>
+    </div>
+
+    <div *ngFor="let section of workstash.sections">
+        <a class="item" style="font-weight: bold"><i class="folder icon"></i> {{section.name}} <i class="plus icon" (click)="createWorkspace(section.id)"></i></a>
+        <span *ngFor="let workspace of section.workspaces">
+            <a class="item" (click)="activateWorkspace(workspace.id)">{{workspace.name}} <i class="eye icon" *ngIf="workspace.active"></i></a>
+        </span>
+    </div>
 </div>

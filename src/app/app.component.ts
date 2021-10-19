@@ -1,5 +1,6 @@
 import { Component, Injector } from '@angular/core';
 import { SettingsService } from '@core/services/settings.service';
+import { WorkstashService } from '@core/services/workstash.service';
 import { SettingsState } from '@models';
 import { BaseAbstract } from '@core/abstract/base.abstract';
 
@@ -13,7 +14,8 @@ export class AppComponent extends BaseAbstract {
 
     constructor(
         public injector: Injector,
-        private settingsService: SettingsService
+        private settingsService: SettingsService,
+        private workstashService: WorkstashService
     ) {
         super(injector);
         this.initApp();
@@ -26,6 +28,8 @@ export class AppComponent extends BaseAbstract {
 
         this.loadingService.show();
         this.settingsService.init().then((settings: SettingsState) => {
+        });
+        this.workstashService.init().then(() => {
             this.loadingService.hide();
         });
     }
